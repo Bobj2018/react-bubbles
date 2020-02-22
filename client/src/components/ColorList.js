@@ -118,6 +118,7 @@ const ColorList = ({ colors, updateColors }) => {
 					<label>
 						hex code:
 						<input
+							type='color'
 							onChange={e =>
 								setColorToEdit({
 									...colorToEdit,
@@ -148,6 +149,7 @@ const ColorList = ({ colors, updateColors }) => {
 					<label>
 						hex code:
 						<input
+							type='color'
 							onChange={e =>
 								setColorToAdd({
 									...colorToAdd,
