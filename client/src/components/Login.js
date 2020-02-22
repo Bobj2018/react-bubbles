@@ -12,6 +12,7 @@ const Login = props => {
 
 	function handleChange(e) {
 		setLogin({
+			...login,
 			[e.target.name]: e.target.value
 		});
 	}
@@ -19,9 +20,9 @@ const Login = props => {
 	function handleSubmit(e) {
 		e.preventDefault();
 		axiosWithAuth()
-			.post("http://localhost:5000/api/login", login)
+			.post("/login", login)
 			.then(res => {
-				localStorage.setItem("token", res.data.token);
+				localStorage.setItem("token", res.data.payload);
 				props.history.push("/bubble-page");
 			})
 			.catch(err => console.error(err));
